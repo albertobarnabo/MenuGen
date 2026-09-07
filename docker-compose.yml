@@ -1,0 +1,13 @@
+services:
+  menugen:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - menugen-data:/data
+    restart: unless-stopped
+
+volumes:
+  menugen-data:
